@@ -1,7 +1,7 @@
 # dpodvyaznikov_infra
 dpodvyaznikov Infra repository
 
-=======
+-------------
 ## Домашнее задание №3: bastion
 
 Адреса хостов:
@@ -21,13 +21,13 @@ someinternalhost_IP = 10.128.0.29
 
 # bastion
 Host bastion
-   HostName 84.252.131.34
+   HostName 130.193.38.163
    User appuser
    IdentityFile ~/.ssh/appuser
 
 # someinternalhost
 Host someinternalhost
-   HostName 10.128.0.34
+   HostName 10.128.0.29
    User appuser
    IdentityFile ~/.ssh/appuser
    ProxyJump bastion
@@ -42,7 +42,7 @@ ssh someinternalhost
 
 ```
 
-=======
+-------------
 ## Домашнее задание №2: play-travis
 * Добавлен pre-commit hook и шаблон для PR
 * Добавлена интеграция уведомлений в Slack
