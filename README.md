@@ -3,6 +3,66 @@ dpodvyaznikov Infra repository
 
 -------------
 
+## Домашнее задание №6: terraform-1
+
+* Созданы ветка `terraform-1`, в ней каталог **terraform** с **main.tf** внутри и обновлены исключения в **.gitignore**
+* Отредактирован **main.tf** и создан инстанс с помощью **terraform**
+*Для корректной работы необходимо изменить в **main.tf** количество ядер с 1 на 2:*
+```
+...
+  resources {
+    cores  = 2
+    ...
+  }
+  ...
+```
+* Создан **outputs.tf** для сохранения параметров полученного инстанса.
+* Созданы файлы для запуска приложения в директории **files**; настроены провижионеры, дополнен **main.tf**
+* Запущен инстанс с автозапуском приложения
+
+## Домашнее задание №5: packer
+
+* Заполнен шаблон **ubuntu16.json**
+
+*Для корректной работы шаблона необходимо добавить в шаблон строки:*
+```json
+{
+   "use_ipv4_nat": true,
+   "zone": "ru-central1-a",
+   "subnet_id": "my_subnet_id"
+}
+```
+
+* Проверен и собиран образ
+```bash
+>>> packer validate ./ubuntu16.json
+>>> packer build ./ubuntu16.json
+```
+*Для корректной работы необходимо добавить в скрипты **install_ruby.sh** и **install_mongodb.sh**, строчку:*
+```bash
+echo "sleep 3m for install updates"; sleep 5m; echo "start install ..."
+```
+* Созданы файлы с переменными **variables.json** и **variables.json.example**, первый добавлен в **.gitignore**
+```json
+{
+  "key": "key.json",
+  "fid": "qwe",
+  "image": "ubuntu-1604-lts"
+}
+```
+
+* Для валидации в travis создан **key.json.example** идентичный рабочему
+```json
+{
+   "id": "qwe",
+   "service_account_id": "rty",
+   "created_at": "2021-10-03T09:09:29Z",
+   "key_algorithm": "RSA_2048",
+   "public_key": "-----BEGIN PUBLIC KEY-----\n",
+   "private_key": "-----BEGIN PRIVATE KEY-----\n"
+}
+```
+
 ## Домашнее задание №4: bastion
 
 Адреса хостов:

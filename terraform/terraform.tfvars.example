@@ -1,0 +1,8 @@
+cloud_id                  = "abv"
+folder_id                 = "bcde"
+zone                      = "ru-central1-a"
+image_id                  = "fde"
+public_key_path           = "~/.ssh/yc.pub"
+subnet_id                 = "dfjf"
+service_account_key_file  = "key.json"
+private_key_path          = "~/.ssh/yc"
