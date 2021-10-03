@@ -1,13 +1,12 @@
 provider "yandex" {
-  token     = "AQAAAAAcJ8AKAATuwR_xKX3hTkzqpJRrSf1gyfs"
-  cloud_id  = "b1g7ihmef9bdugnt2cqq"
-  folder_id = "b1g9qst0slqmpsn7gn0a"
-  zone      = "ru-central1-a"
+  service_account_key_file = var.service_account_key_file
+  cloud_id  = var.cloud_id
+  folder_id = var.folder_id
+  zone      = var.zone
 }
 
 resource "yandex_compute_instance" "app" {
   name = "reddit-app"
-  zone = var.zone
 
   resources {
     cores  = 2
